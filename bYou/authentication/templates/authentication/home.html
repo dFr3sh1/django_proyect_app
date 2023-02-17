@@ -1,0 +1,17 @@
+{% extends 'authentication/base.html' %}
+
+
+
+{% block content %}
+{% load static %}
+{% static "images/realisation.jpeg" as hd_photo %}
+
+<section class="section_header">
+    <img src="{{hd_photo}}" alt="réalisation personelle">
+</section>
+    <h1>CAR IL N'Y A MIEUX QUE VOUS-MÊME</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+        Ratione ullam delectus, quos debitis culpa dolor est eligendi deserunt! 
+        Nesciunt eaque atque dignissimos magni ullam? Fugiat vitae quia animi suscipit hic.</p>
+    
+{% endblock %}

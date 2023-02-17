@@ -1,0 +1,63 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BYou</title>
+    <link rel="stylesheet" href="{% static 'main.css' %}" />
+</head>
+<body>
+    <div class="header_bar">
+        <p>+33 (0) 3 20 87 89 90</p>
+        <ul>
+            <li><a href="{% url 'login' %}">login</a></li>
+        </ul>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="{% url 'accueil' %}">ACCUEIL</a></li>            
+            <li><a href="{% url 'rendez-vous' %}">RENDEZ-VOUS</a></li>
+            <li><a href="{% url 'historique' %}">MON PROGRÈS</a></li>
+            <li><a href="{% url 's_enregistrer' %}">INSCRIVEZ-VOUS</a></li>
+        </ul>
+    </nav>
+    {% block content %}{% endblock %}   
+    {%  if user.is_authenticated %}
+            <p>Vous êtes connecté en tant que {{ request.user }}. <a href="{% url 'se_deconnecter' %}">Se déconnecter</a></p>
+        {% endif %}
+    <footer>
+        {%load static%}
+        {% static "images/il_fullxfull.2839423086_lgog.webp" as foot_photo %}
+        <section id="contact">
+            <img src="{{ foot_photo }}" alt="firstWeHaveACoffe" width="50%">
+            <section id="greetings">
+                <h3 class="phraseGreetings">Soyez maître de votre destin</h3>
+                
+                <h3 class="phraseGreetings"><span id="unBonCafe">Un bon café c'est le début de tout.</span></h3>
+                <form action= url(josecuaces@gmail.com) method="get">
+                    <textarea name="contact" id="contactMessage" cols="80" rows="14" placeholder="N'oublies pas de taper tes coordonnées de contact, ce site ne sauvegarde pas de données."></textarea>
+                <input id="sendMessageContact" type="submit">
+                </form>
+                
+                <br><br><br>
+                <section id="footerData">
+    
+                    <h2 id="greetingsH2">BYou</h2>
+                    <h3 id="greetingsH3">gettingstronger@byou.xyz | + 33 (0) 6 95
+                        06
+                        52 67</h3>
+                </section>
+                <section class="footerBaseline">
+                    <p id="author" style="font-size:x-small; line-height: -20px">2022 josé cuacés. À exception de la photo
+                        du profil, les images sont
+                        téléchargées d'internet et conservent leur nom de la web.</p>
+                </section>
+            </section>
+    
+        </section>
+    </footer>
+</body>
+</html>
