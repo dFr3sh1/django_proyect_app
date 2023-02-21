@@ -1,0 +1,76 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mynerve&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Peta&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'main.css' %}" />
+   {% block title %}
+   {% endblock %}
+
+    
+</head>
+
+<body>
+    <div class="header_bar">
+        <p>+33 (0) 3 20 87 89 90</p>
+       <a href="{% url 'login' %}" class="login_btn">Login</a>
+       
+    </div>
+    <nav>
+        <ul>
+            <li><a href="{% url 'accueil' %}">ACCUEIL</a></li>            
+            <li><a href="{% url 'rendez-vous' %}">RENDEZ-VOUS</a></li>
+            <li><a href="{% url 'historique' %}">MON PROGRÈS</a></li>
+            <li><a href="{% url 's_enregistrer' %}">INSCRIVEZ-VOUS</a></li>
+        </ul>
+    </nav>
+
+    {% block header %}
+    {% endblock %}
+
+    
+    <main>   
+    {% block content %}
+    {% endblock %}      
+    </main>
+
+
+    {%  if user.is_authenticated %}
+            <p>Vous êtes connecté en tant que {{ request.user }}. <a href=" {% url 'logout' %}">Se déconnecter</a></p>
+        {% endif %}
+   
+    <footer>
+        {%load static%}
+        <section id="contact">
+            <section id="greetings">
+
+                <h3 class="phraseGreetings"><span id="unBonCafe">Un bon café c'est le début de tout.</span></h3>
+                
+                <br><br><br>
+                <section id="footerData">
+    
+                    <h2 id="greetingsH2">BYou</h2>
+                    <h3 id="greetingsH3">gettingstronger@byou.xyz | + 33 (0) 6 95
+                        06
+                        52 67</h3>
+                </section>
+                <section class="footerBaseline">
+                    <p id="author" style="font-size:x-small; line-height: -20px">2022 josé cuacés. À exception de la photo
+                        du profil, les images sont
+                        téléchargées d'internet et conservent leur nom de la web.</p>
+                </section>
+            </section>
+    
+        </section>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{% extends "agenda/base.html" %}
+
+
+
+{% block header %}
+<header class="header_confirmation">
+    <h1 class="h1_signup">BYou</h1>	
+</header>
+{% endblock %}
+
+
+{% block content %} 
+
+{% load crispy_forms_tags %}         
+
+<!--Register--> 
+<div class="container py-5">
+	<h1>Votre rendez-vous est cconfirmée</h1>	
+	
+	<p class="text-center">Si vous avez déjà votre compte, <a href="/login">login</a> ici.</p>
+</div>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "agenda/base.html" %}
+
+
+
+{% block header %}
+<header class="header_s_enregistrer">
+    <h1 class="h1_signup">BYou</h1>	
+</header>
+{% endblock %}
+
+
+{% block content %} 
+
+{% load crispy_forms_tags %}         
+
+<!--Register--> 
+<div class="container py-5">
+	<h1>Register</h1>	
+	<form method="POST">
+		{% csrf_token %}
+		{{ form.as_p }}                    
+		<button class="btn btn-primary" type="submit">Enregistrez-vous</button>
+	</form>
+	<p class="text-center">Si vous avez déjà votre compte, <a href="/login">login</a> ici.</p>
+</div>
+
+{% endblock %}
