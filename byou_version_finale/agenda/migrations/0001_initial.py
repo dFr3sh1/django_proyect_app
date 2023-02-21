@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
             name='Appointments',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('username', models.CharField(blank=True, max_length=50, null=True, unique=True)),
+                ('username', models.CharField(blank=True, default='', max_length=50, null=True, unique=True)),
                 ('date', models.DateTimeField()),
                 ('schedules', models.CharField(choices=[('9:00', '9:00'), ('9:55', '9:55'), ('10:50', '10:50'), ('11:45', '11:45'), ('13:30', '13:30'), ('14:25', '14:25'), ('15:20', '15:20'), ('16:15', '16:15'), ('17:10', '17:10')], default='Horaires', max_length=50)),
                 ('message', models.CharField(max_length=100, null=True)),
@@ -37,7 +37,7 @@ class Migration(migrations.Migration):
                 ('is_staff', models.BooleanField(default=False, help_text='Designates whether the user can log into this admin site.', verbose_name='staff status')),
                 ('is_active', models.BooleanField(default=True, help_text='Designates whether this user should be treated as active. Unselect this instead of deleting accounts.', verbose_name='active')),
                 ('date_joined', models.DateTimeField(default=django.utils.timezone.now, verbose_name='date joined')),
-                ('username', models.CharField(blank=True, max_length=50, null=True, unique=True)),
+                ('username', models.CharField(blank=True, default='', max_length=50, null=True, unique=True)),
                 ('email address', models.EmailField(max_length=254, null=True, unique=True)),
                 ('native_name', models.CharField(max_length=50, null=True)),
                 ('phone', models.CharField(max_length=12)),

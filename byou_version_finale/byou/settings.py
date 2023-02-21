@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'agenda',
-    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -130,6 +129,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'accueil'
 
-AUTH_USER_MODEL = 'agenda.User'
+AUTH_USER_MODEL = 'auth.User'
 
 SILENCED_SYSTEM_CHECKS = ['auth.E003', 'auth.W004']

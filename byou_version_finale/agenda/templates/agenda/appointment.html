@@ -9,14 +9,15 @@
 
 {% block content %} 
 
-{% load crispy_forms_tags %}         
+{% comment %} {% load {% static '' %} %}          {% endcomment %}
 
 <!--Register--> 
 <div class="container py-5">
 	<h1>Concreter une RDV</h1>	
 	<form method="POST">
 		{% csrf_token %}
-		{{ form.as_p }}                    
+		<label for= "date"> Choissisez votre date t votre créneau :</label> 
+		<input type="datetime-local" id="date" name="date" min"{{datetime.now|date:'Y-m-d'}} T09:00" max="{{ datetime.now|date:'Y-m-d'}} T17:00"><br>                  
 		<button class="btn btn-primary" type="submit">Envoyer</button>
 	</form>
 	<p class="text-center">Si vous avez déjà votre compte, <a href="/login">login</a> ici.</p>

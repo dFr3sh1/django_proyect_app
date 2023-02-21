@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import agenda.views
+from django.contrib.auth.views import LoginView, LogoutView
 
 #app_name = "agenda"
 
@@ -25,8 +26,8 @@ urlpatterns = [
     #path('base/', agenda.views.index, name='base'),
     path('confirmation/', agenda.views.confirmation, name='confimation'),
     path('historique/', agenda.views.historial, name='historique'),
-    path('login/', agenda.views.login, name='login'),
-    path('logout/', agenda.views.logout_user, name='logout'),
+    path('login/', LoginView.as_view(), name='login'),
+    path('logout/', LogoutView.as_view(), name='logout'),
     path('rendez-vous/', agenda.views.appointment, name='rendez-vous'),
     path('s_enregistrer/', agenda.views.signup, name='s_enregistrer'),    
 ]

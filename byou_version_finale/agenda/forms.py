@@ -18,20 +18,20 @@ class NewUserForm(UserCreationForm):
         return user
     
                                 
-class LoginForm(forms.ModelForm):
-    """
-    Form class with one parameter from forms.
+# class LoginForm(forms.ModelForm):
+#     """
+#     Form class with one parameter from forms.
 
-    Args:
-        forms (_Form_): take two arguments to access user to the site
-    """      
-    username = forms.CharField(max_length=63, label='Nom d’utilisateur')
-    password = forms.CharField(max_length=63, widget=forms.PasswordInput, label='Mot de passe')
+#     Args:
+#         forms (_Form_): take two arguments to access user to the site
+#     """      
+#     username = forms.CharField(max_length=63, label='Nom d’utilisateur')
+#     password = forms.CharField(max_length=63, widget=forms.PasswordInput, label='Mot de passe')
     
-class AppointmentsForm(forms.ModelForm):    
-    class Meta:
-        model = Appointments
-        fields = ("__all__")
+# class AppointmentsForm():    
+#     class Meta:
+#         model = Appointments
+#         fields = ("__all__")
 
     
     
