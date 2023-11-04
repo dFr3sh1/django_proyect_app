@@ -4,7 +4,7 @@ Django @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_066
 duckdb==0.7.0
 numpy==1.24.2
 pandas==1.5.3
-Pillow==9.4.0
+Pillow==10.0.1
 pyarrow==11.0.0
 pylance==0.3.5
 python-dateutil==2.8.2
